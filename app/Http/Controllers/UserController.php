@@ -102,5 +102,6 @@ class UserController extends Controller
         
         return view('users.info', compact('user'));
     }
+
 }
 ?>

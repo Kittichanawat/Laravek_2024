@@ -7,7 +7,16 @@
     <i class="fa-solid fa-user-plus"></i>
     Add Product 
     </a>
-
+    <form action="/product/search" method="post">
+        @csrf
+        <div class="input-group mt-3">
+            <input type="text" class="form-control" placeholder="Search product" name="keyword" value="{{ $keyword ?? ''}}">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-search"></i>
+                Search
+            </button>
+        </div>
+    </form>
     <table class="table table-bordered table-striped mt-3">
         <thead>
             <tr>
@@ -15,6 +24,7 @@
                 <th>Price</th>
                 <th>Qty</th>
                 <th>Detail</th>
+                <th>Product Type</th>
                 <th width ="110px">Actions</th>
             </tr>
         </thead>
@@ -25,6 +35,7 @@
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->qty }}</td>
                     <td>{{ $product->detail }}</td>
+                    <td>{{$product->productType->name}}</td>
                     <td class="text-center">
                        
                      

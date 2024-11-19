@@ -1,7 +1,7 @@
 @extends('layout')  
 
 @section('content')
-    <h1>Product Form</h1>
+    <h1>Product Formdd</h1>
     <form 
     @if(isset($product))
         action="/product/{{$product->id}}"
@@ -35,7 +35,19 @@
         <label for="detail">Detail</label>
         <input type="text" class="form-control" name="detail" value="{{$product->detail ?? ''}}" placeholder="Enter your detail">
     </div>
-
+    <div class="form-group mt-3">
+        <label for="product_type_id">Product Type</label>
+        <select name="product_type_id" class="form-control">
+            @foreach ($productTypes as $productType)
+                <option value="{{$productType->id}}"
+                    {{isset($product) &&
+                        $product->product_type_id == $productType->id ? 'selected' :  ''}}
+                > 
+                    {{$productType->name}}
+                </option>
+            @endforeach
+        </select>
+    </div>
     <div class="form-group mt-3"></div>
         <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check me-2">
             </i>Submit

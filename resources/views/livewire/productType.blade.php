@@ -6,17 +6,7 @@
     </button>
 
 
-    <div class="card">
-        <div class="card-header">
-            <div class="card-title">ประเภทสินค้า</div>
-        </div>
-        <div class="card-body">
-            <div>Name</div>
-            <input type="text" class="form-control" wire:model="name">
-            <button type="submit" class="btn btn-primary">Save</button>
-        </div>
-
-    </div>
+ 
 
     <table class="table table-bordered table-striped mt-3">
         <thead>
@@ -43,7 +33,7 @@
         </tbody>
     </table>
 
-    <x-modal wire:model="showModal" maxWidth="md" title="{{ isset($editing) ? 'แก้ไขประเภทสินค้า' : 'เพิ่มประเภทสินค้า' }}">
+    <x-modal wire:model="showModal" maxWidth="md" title="{{ isset($editMode) ? 'แก้ไขประเภทสินค้า' : 'เพิ่มประเภทสินค้า'}}">
         <div class="px-3 py-3">
 
 

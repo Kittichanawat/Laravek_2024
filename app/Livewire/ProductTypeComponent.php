@@ -28,6 +28,7 @@ class ProductTypeComponent extends Component {
         }
 
         $productType->name = $this->name;
+        $this->name = '';
 
         $productType->save();
 
